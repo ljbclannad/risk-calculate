@@ -1,0 +1,11 @@
+server:
+  port: 8080
+logging:
+  level:
+    root: info
+spring:
+  datasource:
+    username: root
+    password: n9uEM77lSS
+    url: jdbc:mysql://172.16.88.23:30462/liver_screening?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
