@@ -1,0 +1,19 @@
+package rules.someFact
+
+import com.example.drools.dto.SomeFact
+
+// 规则1: 如果指标A > 10 且 指标B < 20
+rule "Indicator A and B condition"
+    when
+        $fact: SomeFact(indicatorA > 10, indicatorB < 20)
+    then
+        System.out.println("Both conditions met for Indicator A and B.");
+end
+
+// 规则2: 如果指标A <= 10 或 指标B >= 20
+rule "Either Indicator A or B condition not met"
+    when
+        $fact: SomeFact(indicatorA <= 10 || indicatorB >= 20)
+    then
+        System.out.println("Condition not met for either Indicator A or B.");
+end

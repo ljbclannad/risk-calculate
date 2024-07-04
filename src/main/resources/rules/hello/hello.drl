@@ -1,0 +1,31 @@
+ package rules.hello
+
+ import com.example.drools.dto.Person
+ global java.lang.Integer count;
+       rule "test001"
+       salience 3
+             when
+             then
+             count++;
+             System.out.println("test001 count:"+count);
+              System.out.println("hello world");
+       end
+
+       rule "test002"
+       salience 2
+                when
+                 $p:Person(name=="testName",age==18)
+                then
+                $p.setAge(20);
+                update($p);
+                System.out.println("testName用户存在"+$p.getAge());
+        end
+
+        rule "test003"
+        no-loop true
+        salience 1
+                when
+                 $p:Person((age % 2) ==0)
+                then
+                System.out.println("testName用户的年龄是偶数");
+        end
